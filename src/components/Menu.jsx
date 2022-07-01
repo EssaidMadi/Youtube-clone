@@ -17,6 +17,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
+import { Link } from "react-router-dom";
 
 
 
@@ -52,6 +53,10 @@ const Item = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0px;
+
+  &:hover{
+    background-color: ${({theme}) => theme.soft};
+  } 
 `;
 
 const Hr = styled.div`
@@ -85,10 +90,13 @@ const Menu = ( {Darkmode,setDarkmode}) => {
   return (
     <Container>
       <Wrapper>
+      <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
+
         <Logo>
           <Img src={Itube}/>
             Itube
         </Logo>
+      </Link>
         <Item>
           <HomeIcon/>
           Home
@@ -113,7 +121,9 @@ const Menu = ( {Darkmode,setDarkmode}) => {
         <Hr/>
         <Login>
           Sign in to like videos, comment, and subscribe.
+          <Link to="signin" style={{textDecoration:"none"}}>
           <Button> <AccountCircleOutlinedIcon/> SIGN IN</Button>
+          </Link>
         </Login>
         <Hr/>
         <Title>BEST OF Itube</Title>
